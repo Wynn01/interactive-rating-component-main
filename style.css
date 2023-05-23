@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@700&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --orange: hsl(25, 97%, 53%);
+    --heading: hsl(0, 0%, 100%);
+    --text: hsl(217, 12%, 63%);
+    --text-bg: hsl(211, 19%, 23%);
+    --error: hsl(3, 96%, 53%);
+    --card: hsl(213, 19%, 18%);
+    --bg: hsl(216, 12%, 8%);
+    --font: "Overpass", Arial, sans-serif;
+}
+body
+{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card
+{
+    margin: 2rem;
+    position: relative;
+    width: 20rem;
+    background-color: var(--card);
+    height: 23rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    font-family: var(--font);
+}
+.card > section
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.card-message-container
+{
+    left: 20rem;
+    transition: .4s ease-in-out;
+    opacity: 0;
+
+}
+.card-review-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    min-height: 20rem;
+    transition: .4s ease-in-out;
+    left: 0;
+}
+.star-icon
+{
+    padding: .75rem;
+    background-color: var(--text-bg);
+    border-radius: 50%;
+}
+.star-container
+{
+    margin-bottom: 1rem;
+}
+.card-review-container > header
+{
+    color: var(--heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.card-review-container > p
+{
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+p::selection
+{
+    background-color: var(--orange);
+    color: white;
+}
+header::selection, h2::selection
+{
+    background-color: var(--orange);
+}
+.rating-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+.rating-btn
+{
+    outline: none;
+    border: none;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+    width: 100%;
+    font-family: var(--font);
+    cursor: pointer;
+    background-color: var(--card);
+}
+.rating-btn > span
+{
+    display: flex;
+    height: 2.8rem;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: var(--text);
+    border-radius: 50%;
+    background-color: var(--text-bg);
+}
+.submit-btn
+{
+    outline: none;
+    border: none;
+    background-color: var(--orange);
+    color: var(--heading);
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: var(--font);
+}
+.submit-btn:hover
+{
+    filter: brightness(1.25);
+    cursor: pointer;
+}
+.rating-btn-hover
+{
+    background-color: var(--bg) !important;
+}
+.rating-btn-selected
+{
+    background-color: var(--orange) !important;
+    color: var(--heading) !important;
+}
+.error-submit-button
+{
+    background-color: var(--error);
+}
+.card-message-container
+{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card-message-container > h3
+{
+    background-color: var(--text-bg);
+    padding: .3rem .8rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: var(--orange);
+    font-weight: 400;
+    margin: .8rem 0;
+}
+.card-message-container > h3::selection
+{
+    background-color: var(--bg);
+    color: white;
+}
+.card-message-container > h2
+{
+    color: white;
+    margin-bottom: .4rem;
+}
+.card-message-container > p
+{
+    color: var(--text);
+    text-align: center;
+}
+
+@media screen and (min-width: 540px)
+{
+    :root
+    {
+        font-size: 19px;
+    }
+}
+.attribution
+{
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    color: white;
+    font-family: var(--font);
+}
